@@ -1,0 +1,20 @@
+/*Quản lý tuyển sinh
+IPO
+Input: lấy dữ liệu đầu vào
+1 Điểm chuẩn
+2 Điểm khu vực
+3 Điểm đối tượng
+4 Điểm môn 1, Điểm môn 2, Điểm môn 3
+Process:(Các bước chương trình)
+B1 Lấy dữ liệu từ người dùng
+- Tạo biến lưu các giá trị người dùng nhập
+- Lưu giá trị nhập từ form
+- Nhận công thức (Tổng điểm = (tổng điểm 3 môn) + Điểm khu vực + Điểm đối tượng)
+
+B2 Validate input
+- Điểm chuẩn không được lớn hơn 35 (điểm chuẩn >= 35)
+- Điểm môn học không được bé hơn 0 và nhỏ 10 (0>= điểm môn hoc<=10)
+- Có tổng điểm so sánh với điểm chuẩn if(tổng điểm >= điểm chuẩn) => đạt else => không đạt
+B3 Thông báo cho người dùng thấy kết quả
+output: Hiển thị kết quả
+*/
