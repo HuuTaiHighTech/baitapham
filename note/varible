@@ -1,2 +1,14 @@
 nav-pills: chịu trách nhiệm đổi màu khi button active
 btn-tabs: chịu trách nhiệu gắn lable icon trước và sau active
+chỗ input, button bắt chung sự kiện click 
+=> đỡ lặp lại sự kiện
+const vndFormatter = new Intl.NumberFormat('vi-VN');
+object: vndFormatter
+variable: const exchangeRate = 23500;
+btn.addEventListener('click', () => { })
+object: btn
+HTML: document
+method:addEventListener
+string: 'click', 'input', 'change' để nói cho method sẽ lắng nghe loại sự kiện nào
+parameter: (Tham số) rỗng (a, b)
+function: => { }

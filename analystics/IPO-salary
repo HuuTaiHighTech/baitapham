@@ -1,0 +1,33 @@
+Tính tiền lương nhân viên
+IPO (what where why)
+Input: Xác định đầu vào lấy dữ liệu
+- Số lương của 1 ngày
+- Số ngày làm
+Công thức: salary = dailySalary * workingDay
+Process: Quy trình từng bước
+B1: Nguồn dữ liệu lấy dữ liệu từ người dùng từ form
+- Tạo biến nhiệm vụ: lưu giá trị và lấy giá trị khi cần
+- Người dùng lấy giá trị vào form
+- Set id cho người dùng
+- Kết hợp biến và id để connect đến người dùng => có được dữ liệu từ người dùng || giá trị đã được lưu vào biến
+- Xác định kiểu dữ liệu => ép kiểu dữ liệu phù hợp
++ Sau khi làm bước trên sẽ được: giá trị đã lưu vào biến
+- Tận dụng dữ liệu áp dụng vào công thức đang có
+- lưu công thức vào biến từ đó trả ra két quả => sử dụng hàm để tái sử dụng trong môi trường(validate và hiển thị kết quả)
+- salary = dailySalary * workingDay
+- Xử lý sự kiện click (flow happy)
+B2: Validate dữ liệu
+Tiền Việt Nam
+- validate nhập số 100.000
+- Số lương của 1 ngày không được lẻ 
+- Số lương của 1 ngày không được nhỏ hơn 100 nếu nhỏ hơn thì xóa dữ liệu và hiển thị thông báo nhập lại
+- Số ngày làm không được nhỏ hơn 1 và lớn hơn 31 nếu nhỏ hơn thì xóa dữ liệu và hiển thị thông báo nhập lại dữ liệu 
+- Xử lý sự kiện click + validate
+B3: Hiển thị kết quả lên UI
+- Dựa vào id từ người dùng
+- xử lý thông tin hiển thị đến người dùng
+- Ghi chú - phạm vi CHƯA xử lý ở bản này (thuộc B2, để làm sau):
+- Chưa kiểm tra số lương/ngày làm có bị bỏ trống
+- Chưa kiểm tra số lương có phải số nguyên, có nhỏ hơn 100.000 hay không
+- Chưa kiểm tra số ngày làm có nằm trong khoảng 1-31 hay không
+- Chưa xử lý thông báo lỗi / xóa dữ liệu khi nhập sai

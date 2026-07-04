@@ -1,0 +1,39 @@
+IPO
+Tính năng quy đổi tiền
+Input: Nhận giá trị đầu vào
+
+- Số tiền cần quy đổi
+- Tỷ giá quy đổi 1 USD =23.500
+- Đổi từ USD => VND
+- Khi đổi có đơn vị VND
+  Process: Quy trình từng bước
+  B1 Lấy dữ liệu của người dùng nhập từ form
+- Tạo biến và lưu giá trị
+- Set id cho input, button, result (inputUSD,amountVND, resultVND)
+- Kết hợp biến và id để connect đến người dùng => lấy được dữ liệu từ form || giá trị được lưu vào biến
+- Xác định kiểu dữ liệu => ép kiểu dữ liệu phù hợp (string từ input → Number)
+
+* Sau khi làm bước trên sẽ được: giá trị đã lưu vào biến, đúng kiểu số
+
+- Tận dụng dữ liệu áp dụng vào công thức đang có
+- Lưu công thức vào biến, từ đó trả ra kết quả => đặt trong hàm để tái sử dụng
+  - amountUSD = amountVND / exchangeRate
+- Xử lý sự kiện click (flow happy)
+  B2: Validate dữ liệu
+- Số tiền VNĐ không được để trống
+- Số tiền VNĐ không được lẻ (phải là số nguyên, không có phần thập phân)
+- Số tiền VNĐ không được nhỏ hơn 1.000 VNĐ
+  - Nếu nhỏ hơn 1.000 → xóa dữ liệu đã nhập và hiển thị thông báo yêu cầu nhập lại
+- Số tiền VNĐ không được là số âm hoặc bằng 0
+  - Nếu âm hoặc = 0 → xóa dữ liệu đã nhập và hiển thị thông báo yêu cầu nhập lại
+- Số tiền VNĐ không được vượt quá 1 tỷ VNĐ (giới hạn hợp lý, tránh nhập sai số 0)
+  - Nếu vượt quá → xóa dữ liệu đã nhập và hiển thị thông báo yêu cầu nhập lại
+- Xử lý sự kiện click + validate (chỉ tính amountUSD khi dữ liệu hợp lệ, nếu không hợp lệ thì dừng lại, không tính)
+  B3: Hiển thị kết quả lên UI
+- Dựa vào id đã set cho vùng hiển thị kết quả
+- Định dạng số tiền cho đẹp: dùng Intl.NumberFormat để hiển thị VNĐ có dấu chấm ngăn cách hàng nghìn, USD có dấu phẩy + 2 số lẻ
+- Nếu dữ liệu hợp lệ: gán kết quả amountUSD vào nội dung hiển thị (textContent)
+- Nếu dữ liệu không hợp lệ: hiển thị thông báo lỗi tương ứng (thay cho kết quả)
+Output: Kết quả
+- Trường hợp hợp lệ: hiển thị số tiền USD tương ứng (vd: nhập 235.000 VNĐ → hiển thị 10.00 USD)
+- Trường hợp không hợp lệ: hiển thị thông báo lỗi, không hiển thị kết quả quy đổi
