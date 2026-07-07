@@ -1,29 +1,6 @@
-IPO - Tính giá trị trung bình (chưa validate)
+Tình huống 2: Tái sử dụng lại hàm logic
+Khách muốn tính trung bình  
 
-Input: Xác định đầu vào và giá trị người dùng
-- Nhập số thứ 1 (num1)
-- Nhập số thứ 2 (num2)
-- Nhập số thứ 3 (num3)
-- Nhập số thứ 4 (num4)
-- Nhập số thứ 5 (num5)
-- Công thức: avg = total / n
 
-Process: Quy trình từng bước
-- Tạo biến "inputs" (mảng) lưu giá trị từ 5 ô input (num1 → num5)
-- Tạo biến "total" = 0, dùng để lưu tổng các giá trị
-- Tạo biến "n" = 0, dùng để đếm số lượng giá trị đã xử lý
-- Sử dụng vòng lặp for chạy qua từng phần tử trong "inputs" {
-    - Tạo biến "value" lưu giá trị tại vị trí hiện tại của mảng (inputs[i])
-    - Tăng "n" lên 1 mỗi lần lặp (chưa kiểm tra value có hợp lệ hay không)
-    - Cộng dồn: total = total + Number(value)
-    - Hiển thị (console.log) giá trị vừa xử lý và số lần đã lặp (n)
-  }
-- Sau khi vòng lặp kết thúc, tính: avg = total / n
 
-Output: Kết quả
-- In ra console: tổng (total), số lượng đã tính (n), và giá trị trung bình (avg)
 
-Ghi chú (giới hạn hiện tại - CHƯA có ở bản này):
-- Chưa kiểm tra ô input rỗng (n hiện tại luôn = 5, cho dù người dùng chỉ nhập một vài ô)
-- Chưa kiểm tra dữ liệu có phải là số hợp lệ hay không (nếu nhập chữ, Number("abc") sẽ ra NaN, khiến total/avg bị lỗi NaN)
-- Chưa xử lý trường hợp người dùng chưa nhập gì cả (n = 0 → chia cho 0 → avg = Infinity/NaN)
