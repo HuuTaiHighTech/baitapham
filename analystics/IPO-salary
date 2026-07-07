@@ -1,4 +1,4 @@
-Tình huống 1: Không cần tái sử dụng
+Tình huống 1: Cần tái sử dụng hàm
 Khách hàng muốn Tính lương cho nhân viên
 Yêu cầu là làm cho tính năng tính tiền lương nhân viên
 + Trong đó CTY sẽ trả cho nhân viên số tiền tương ứng trong 1 ngày
