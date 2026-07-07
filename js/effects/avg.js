@@ -25,6 +25,7 @@ export function initAvg() {
 
     btn.addEventListener('click', () => {
         // Bước 1: Lấy giá trị từ 5 ô input
+        // duyệt lấy + lấy giá trị từng giá trị để duyệt mảng, 
         const inputs = [
             document.getElementById('num1').value,
             document.getElementById('num2').value,

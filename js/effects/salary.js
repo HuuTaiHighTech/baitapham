@@ -1,30 +1,43 @@
-// ============================================================
-// HÀM 1: Xử lý logic thuần - tính toán, không đụng vào DOM
-// Có tham số rõ ràng => dễ test độc lập, dễ đọc, biết ngay cần gì
-// ============================================================
-function calculateSalary(dailySalary, workingDay) {
-    const salary = dailySalary * workingDay;
-    return `Tổng lương = ${salary.toLocaleString('vi-VN')} VNĐ`;
+function parseVNNumber(str){
+    let formatter = new Intl.NumberFormat('vi-VN');
+    let parts = formatter.formatToParts(1000000);
+    let groupChar = parts.find(p => p.type === 'group').value;
+    return Number(str.toString().split(groupChar).join(''));
 }
 
-// ============================================================
-// HÀM 2: Xử lý DOM - lấy phần tử, gắn sự kiện, gọi hàm 1 để lấy kết quả
-// ============================================================
-export function initSalary() {
-    const btn = document.getElementById('btnCalcSalary');
-    const dailySalaryEl = document.getElementById('dailySalary');
-    const workingDayEl = document.getElementById('workingDay');
-    const resultEl = document.getElementById('resultSalary');
+function calculateSalary(dailySalary, workingDate){
+    return dailySalary * workingDate;
+}
 
+function validateLogic(dailySalary, workingDate){
+    if(isFinite(dailySalary) && isFinite(workingDate)){
+        if(dailySalary >= 100 && (workingDate >= 1 && workingDate <= 31)){
+            return true;
+        }else{
+            alert("Dữ liệu số không hợp lệ");
+            return false;
+        }
+    }else {
+        alert("Input không được chứa ký tự");
+        return false;
+    }
+}
+
+export function initSalary(){
+    let btn = document.getElementById('btnCalcSalaryele');
+    
     btn.addEventListener('click', () => {
-        // Kết hợp biến và id để connect đến người dùng => lấy dữ liệu từ form
-        // Xác định kiểu dữ liệu => ép kiểu dữ liệu phù hợp (Number)
-        const dailySalary = Number(dailySalaryEl.value);
-        const workingDay = Number(workingDayEl.value);
+        let dailySalaryEle = document.getElementById('dailySalaryele');
+        let workingDateEle = document.getElementById('workingDayele');
+        let resultEle = document.getElementById('resultSalaryele');
 
-        console.log(`Lương 1 ngày: ${dailySalary}, Số ngày làm: ${workingDay}`);
+        let dailySalary = parseVNNumber(dailySalaryEle.value);
+        let workingDate = Number(workingDateEle.value);
 
-        // Gọi hàm 1 để xử lý logic, hàm 2 chỉ lo việc DOM
-        resultEl.textContent = calculateSalary(dailySalary, workingDay);
+        if(validateLogic(dailySalary, workingDate)){
+            let salary = calculateSalary(dailySalary, workingDate);
+            let formatter = new Intl.NumberFormat('vi-VN');
+            resultEle.textContent = formatter.format(salary) + " VNĐ";
+        }
     });
 }
