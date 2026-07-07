@@ -1,33 +1,26 @@
-Tính tiền lương nhân viên
-IPO (what where why)
-Input: Xác định đầu vào lấy dữ liệu
-- Số lương của 1 ngày
-- Số ngày làm
-Công thức: salary = dailySalary * workingDay
-Process: Quy trình từng bước
-B1: Nguồn dữ liệu lấy dữ liệu từ người dùng từ form
-- Tạo biến nhiệm vụ: lưu giá trị và lấy giá trị khi cần
-- Người dùng lấy giá trị vào form
-- Set id cho người dùng
-- Kết hợp biến và id để connect đến người dùng => có được dữ liệu từ người dùng || giá trị đã được lưu vào biến
-- Xác định kiểu dữ liệu => ép kiểu dữ liệu phù hợp
-+ Sau khi làm bước trên sẽ được: giá trị đã lưu vào biến
-- Tận dụng dữ liệu áp dụng vào công thức đang có
-- lưu công thức vào biến từ đó trả ra két quả => sử dụng hàm để tái sử dụng trong môi trường(validate và hiển thị kết quả)
-- salary = dailySalary * workingDay
-- Xử lý sự kiện click (flow happy)
-B2: Validate dữ liệu
-Tiền Việt Nam
-- validate nhập số 100.000
-- Số lương của 1 ngày không được lẻ 
-- Số lương của 1 ngày không được nhỏ hơn 100 nếu nhỏ hơn thì xóa dữ liệu và hiển thị thông báo nhập lại
-- Số ngày làm không được nhỏ hơn 1 và lớn hơn 31 nếu nhỏ hơn thì xóa dữ liệu và hiển thị thông báo nhập lại dữ liệu 
-- Xử lý sự kiện click + validate
-B3: Hiển thị kết quả lên UI
-- Dựa vào id từ người dùng
-- xử lý thông tin hiển thị đến người dùng
-- Ghi chú - phạm vi CHƯA xử lý ở bản này (thuộc B2, để làm sau):
-- Chưa kiểm tra số lương/ngày làm có bị bỏ trống
-- Chưa kiểm tra số lương có phải số nguyên, có nhỏ hơn 100.000 hay không
-- Chưa kiểm tra số ngày làm có nằm trong khoảng 1-31 hay không
-- Chưa xử lý thông báo lỗi / xóa dữ liệu khi nhập sai
+Tình huống 1: Không cần tái sử dụng
+Khách hàng muốn Tính lương cho nhân viên
+Yêu cầu là làm cho tính năng tính tiền lương nhân viên
++ Trong đó CTY sẽ trả cho nhân viên số tiền tương ứng trong 1 ngày
++ Nhân viên đó làm việc được bao nhiêu ngày
++ Từ đó tính tiền cho nhân viên
++ Tiền sẽ được tính là đơn vị tiền tệ VND
+FE: Sử dụng mô hình IPO
+Input: 
+Xác định lương của 1 ngày (dailySalary)
+Số lượng ngày nhân viên làm được (workingDate)
+Công thức: salary = dailySalary * workingDate
+Process:
+- Validation đầu vào logic
+  Cửa gác validate
+  check input đầu vào có phải là số không
+  nếu đúng thì check tiếp 
+  + [dailySalary >= 100)
+  + [workingDate >= 1 && workingDate <=31]
+  sau đó xử lý input đầu vào theo số tiền theo form 1.000.000
+  sau cùng xử lý output đầu ra theo số form đã xác định input
+  Giai đoạn phân rã hàm validate, validatelogic đã xong
+  Xử lý dữ liệu đầu và và đầu ra đúng chuẩn tính tiền VND
+  chuyển qua giai đoạn kỹ thuật DOM 
+output:
+Hiển thị lương nhân viên đúng công thức
