@@ -1,40 +1,35 @@
-// ============================================================
-// HÀM 1: Xử lý logic thuần - tính toán, không đụng vào DOM
-// Có tham số rõ ràng => dễ test độc lập, dễ đọc, biết ngay cần gì
-// ============================================================
-function calculateAverage(values) {
-    let total = 0;
-    let n = 0;
-
-    for (let i = 0; i < values.length; i++) {
-        let value = values[i];
-        n = n + 1;
-        total = total + Number(value);
-    }
-
-    const avg = total / n;
-    return `Tổng = ${total}, Số lượng = ${n}, Trung bình = ${avg}`;
+function calculateAVG (num1, num2, num3, num4, num5){
+    return (num1 + num2 + num3 + num4 + num5)/5;
 }
+function validatelogic (num1, num2, num3, num4, num5){
+    if(isFinite(num1) && isFinite(num2) && isFinite(num3) 
+        && isFinite(num4) && isFinite(num5)){
 
-// ============================================================
-// HÀM 2: Xử lý DOM - lấy phần tử, gắn sự kiện, gọi hàm 1 để lấy kết quả
-// ============================================================
-export function initAvg() {
-    const btn = document.getElementById('btnCalculate');
-    const resultEl = document.getElementById('result');
-
+        if(num1 >= 0 && num2 >= 0 && num3 >= 0 && num4 >= 0 && num5 >= 0){
+            return true;
+        }else{
+            alert("Dữ liệu số không hợp lệ");
+            return false;
+        }
+    }else {
+        alert("Input không được chứa ký tự");
+        return false;
+    }
+}
+export function mainAVG(){
+    let btn = document.getElementById('btnCalculate');
     btn.addEventListener('click', () => {
-        // Bước 1: Lấy giá trị từ 5 ô input
-        // duyệt lấy + lấy giá trị từng giá trị để duyệt mảng, 
-        const inputs = [
-            document.getElementById('num1').value,
-            document.getElementById('num2').value,
-            document.getElementById('num3').value,
-            document.getElementById('num4').value,
-            document.getElementById('num5').value
-        ];
-
-        // Gọi hàm 1 để xử lý logic, hàm 2 chỉ lo việc DOM
-        resultEl.textContent = calculateAverage(inputs);
-    });
+    let resultEle = document.getElementById('resultele');
+    let num1 = Number(document.getElementById('num1ele').value);
+    let num2 = Number(document.getElementById('num2ele').value);
+    let num3 = Number(document.getElementById('num3ele').value);
+    let num4 = Number(document.getElementById('num4ele').value);
+    let num5 = Number(document.getElementById('num5ele').value);
+    if(validatelogic (num1, num2, num3, num4, num5)){
+        let result = calculateAVG (num1, num2, num3, num4, num5);
+        console.log(result);
+        resultEle.textContent = result;
+    }
+    })
+    
 }

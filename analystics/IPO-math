@@ -1,29 +1,22 @@
-IPO
-Tính diện tích, chu vi hình chữ nhật
-1. Input (Đầu vào)
-varibale:
-- Chiều dài (Length) — kiểu số
-- Chiều rộng (Width) — kiểu số
-- Diện tích (Area)
-- Chu vi (Perimeter)
-Công thức tính diện tích (Area = Length * Width)
-Công thức tính chu vi (Perimeter = (Length + Width) * 2)
-2. Process (Quy trình tạo từng bước)
-   B1 Khai báo hàm riêng
-   => Nhiệm vụ của 2 hàm này là áp dụng công thức và trả ra kết quả cuối cùng return
-    + Tạo hàm khai báo tham số calculateArea(Length, Width)
-    + Tạo hàm khai báo tham số calculatePerimeter(Length, Width)
-    
-      Khai báo hàm main
-    => Nhiệm vụ của hàm main này là khai bao biến {
-        cụ thể khai báo biến từ UI cho đến logic
-        2.1 Tạo biến LengthEl, WidthEl, btn, resultMathEl
-        => Nhiệm vụ của những varible này connect đến UI và lưu giá trị từ người dùng và lắng nghe sự kiện
-        2.2 Gọi hàm và kết hợp biến hiện tại 
-        => Nhiệm vụ sử dụng hàm đã có lưu vào biến hiện tại trả ra dữ liệu dưới dạng console 
-    }
-    + Tạo hàm khai báo tham số rỗng initMath()
-    + Tạo biến 
+Tình huống 2: Tái sử dụng lại code
+Khách muốn tích chu vi và diện tích đất của hình chữ nhật
+Yêu cầu là tạo ra tính năng tính diện tích và chu vi hình chữ nhật
++ Trong đó họ sẽ nhập số dài và rộng
++ Hiển thị chu vi và diện tích đất cho họ
+FE: Sử dụng mô hình IPO
+Input:
+Xác định 2 dài và rộng
+Công thức:
+1 Chu vi = (dai + rong)*2
+2 Diện tích = dài *rộng
 
-3. Output (Đầu ra)
-- Sau khi hiển thị console flow happy ổn rồi có thể hiển thị cho end user
+Process:
+- Validation đầu vào logic
+  Cửa gác validate
+  check input đầu vào có phải là số không
+  nếu đúng check tiếp
+  + dài và rộng >=0
+  Sau khi phân ra validate xong
+  sử dụng kỹ thuật DOM
+output:
+Hiển thị số liệu chu vi và diện tích theo dữ liệu chiều rộng

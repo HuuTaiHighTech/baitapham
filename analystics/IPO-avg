@@ -1,6 +1,21 @@
 Tình huống 2: Tái sử dụng lại hàm logic
-Khách muốn tính trung bình  
-
+Khách muốn tính trung bình số
+Yêu cầu là làm cho tính năng tính trung bình của số liệu
++ Trong đó CTY sẽ nhập số liệu là 5 số thực 
+FE: Sử dụng mô hình IPO
+Input:
+xác định 5 input
+công thức AVG = (tổng 5 input)/5
+Process:
+- Validation đầu vào logic
+  Cửa gác validate
+  check input đầu vào có phải là số không
+  nếu đúng check tiếp
+  + 5 input không được âm
+  Giai đoạn phân rã hàm validate, validatelogic đã xong
+  chuyển qua giai đoạn kỹ thuật DOM 
+Output:
+Hiển thị giá trị trung bình của số liệu
 
 
 
