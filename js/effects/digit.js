@@ -5,11 +5,12 @@ function calculateDigitSum(inputNumber) {
 }
 
 export function initdigit() {
-  const numberEl = document.getElementById("numberInput");
   const btn = document.getElementById("calcBtn");
-  const resultMathEl = document.getElementById("resultMath");
 
   btn.addEventListener("click", function () {
+  const resultMathEl = document.getElementById("resultdigit");
+  const numberEl = document.getElementById("numberInput");
+
     const numberValue = Number(numberEl.value);
 
     const sum = calculateDigitSum(numberValue);
