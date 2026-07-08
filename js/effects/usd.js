@@ -35,7 +35,7 @@ function validateLogic(exchangeRateUSD, currentUsdExchangeRate) {
 }
 
 
-export function USDmain(){
+export function mainUSD(){
     
     let btn = document.getElementById('btnConvert');
     btn.addEventListener('click', () => {

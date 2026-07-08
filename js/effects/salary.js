@@ -1,8 +1,8 @@
 function parseVNNumber(str){
-    let formatter = new Intl.NumberFormat('vi-VN');
-    let parts = formatter.formatToParts(1000000);
-    let groupChar = parts.find(p => p.type === 'group').value;
-    return Number(str.toString().split(groupChar).join(''));
+    // let formatter = new Intl.NumberFormat('vi-VN');
+    // let parts = formatter.formatToParts(1000000);
+    // let groupChar = parts.find(p => p.type === 'group').value;
+    return Number(str.replace(/\./g, "").replace(",", "."));
 }
 
 function calculateSalary(dailySalary, workingDate){
@@ -11,7 +11,7 @@ function calculateSalary(dailySalary, workingDate){
 
 function validateLogic(dailySalary, workingDate){
     if(isFinite(dailySalary) && isFinite(workingDate)){
-        if(dailySalary >= 100 && (workingDate >= 1 && workingDate <= 31)){
+        if(dailySalary >= 100000 && (workingDate >= 1 && workingDate <= 31)){
             return true;
         }else{
             alert("Dữ liệu số không hợp lệ");

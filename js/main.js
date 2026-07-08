@@ -1,5 +1,7 @@
 import { initSalary } from "./effects/salary.js";
-import { USDmain } from "./effects/usd.js";
+import { mainUSD } from "./effects/usd.js";
+import { mainAVG } from "./effects/avg.js";
+
 // import { initUSD } from "./effects/usd.js";
 // import { initMath } from "./effects/math.js";
 // import { initdigit } from "./effects/digit.js";
@@ -11,8 +13,8 @@ import { USDmain } from "./effects/usd.js";
 // initSalary();
 document.addEventListener("DOMContentLoaded", () => {
     initSalary();
-    USDmain();
-    // initAvg();
+    mainUSD();
+    mainAVG();
     // initUSD ();
     // initMath();
     // initdigit();
